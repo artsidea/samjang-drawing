@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Writing</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/@mediapipe/hands"></script>
+    <script defer src="script.js"></script>
+    <style>
+        body { text-align: center; }
+        #videoCanvas, #drawCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #videoCanvas {
+            z-index: 1; /* 비디오는 아래 */
+        }
+        #drawCanvas {
+            z-index: 2; /* 그림이 위에 */
+            pointer-events: none; /* 마우스 이벤트 차단 */
+        }
+    </style>
+</head>
+<body>
+    <h1>✍️ Air Writing</h1>
+    <video id="video" autoplay></video>
+    <canvas id="videoCanvas"></canvas> <!-- 비디오 캔버스 -->
+    <canvas id="drawCanvas"></canvas>  <!-- 그림 캔버스 -->
+    <button id="clearBtn">지우기</button>
+</body>
+</html>
